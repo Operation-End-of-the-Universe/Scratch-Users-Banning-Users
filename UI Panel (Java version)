@@ -1,0 +1,61 @@
+// Function to ban a user
+function banUser(username, apiKey, email, password) {
+  // Send a request to the server to ban the user
+  const request = new XMLHttpRequest();
+  request.open('POST', 'https://api.example.com/ban');
+  request.setRequestHeader('Content-Type', 'application/json');
+  
+  const requestBody = JSON.stringify({
+    username: username,
+    apiKey: apiKey,
+    email: email,
+    password: password
+  });
+  
+  request.send(requestBody);
+  
+  // Update the UI to reflect the banned status
+  const userElement = document.getElementById(username);
+  userElement.classList.add('banned');
+}
+
+// Function to display the list of users in the UI
+function displayUsers(users) {
+  const userList = document.getElementById('user-list');
+  
+  // Clear any existing users from the list
+  userList.innerHTML = '';
+  
+  // Loop through each user and create an element for them in the UI
+  for (const user of users) {
+    const userElement = document.createElement('div');
+    userElement.id = user.username;
+    userElement.textContent = user.username;
+    
+    // Add a click event listener to prompt for API Key, email, and password when clicked
+    userElement.addEventListener('click', () => {
+      const apiKey = prompt('Enter your API Key:');
+      const email = prompt('Enter your email:');
+      const password = prompt('Enter your password:');
+      
+      if (apiKey && email && password) {
+        banUser(user.username, apiKey, email, password);
+      } else {
+        alert('Please provide all required information.');
+      }
+    });
+    
+    userList.appendChild(userElement);
+  }
+}
+
+// Example list of users
+const users = [
+  { username: 'user1' },
+  { username: 'user2' },
+  { username: 'user3' }
+];
+
+// Call the displayUsers function to initially populate the UI with users
+displayUsers(users);
+    userList.appendChild(userElement);
