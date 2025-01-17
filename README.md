@@ -19,6 +19,8 @@ then enter those three things through the UI that will open up with this code an
 This UI is basically similar to a moderators UI Panel. 
 
 THERE WILL BE OTHER SCRIPS FOR OTHER AND EXTRA STUFF FOR SAFE KEEPING
+# Scratchcord
+Scratchcord is a add-on extentsion type of script to view projects made by users you follow, even if it's theoretically unshared or deleted, it's OG link, thumbnail, and user will show up :D
 
 BE WARNED: WE DO NOT CONDORSE ILLEGAL ACTIVITY (Banning scratch accounts aren't really illegal activity, but still), THIS IS JUST A LITTLE BAN DEMO THAT YOU MAY USE. WE AM LEGALLY NOT RESPONSIBLE FOR ANY ACCOUNT DATA BEING LOST
 
