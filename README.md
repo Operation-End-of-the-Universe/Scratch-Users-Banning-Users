@@ -5,7 +5,7 @@ Scratch Users may ban other users with this script, you need violent monkey and 
 
 # How-to-use
 Install Violentmonkey: https://violentmonkey.github.io/
-This will tampar the code and automaticallt run it.
+This will tamper the code and automatically run it.
 
 Next, find the user you wish to ban
 for example, i will use a alt accounts: @Gregorythemandios
