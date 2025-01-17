@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hacker's Moderator UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            padding: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        #userList {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Moderator Dashboard</h1>
+        <input type="text" id="searchInput" placeholder="Search for a user..." />
+        <button id="searchButton">Search</button>
+
+        <ul id="userList"></ul>
+
+        <h3>Delete User</h3>
+        <input type="text" id="deleteUserId" placeholder="User ID to delete..." />
+        <input type="text" id="deleteReason" placeholder="Reason for deletion..." />
+        <button id="deleteButton">Delete User</button>
+        
+        <div id="feedback"></div>
+    </div>
+
+    <script>
+        const users = [
+            { id: '1', name: 'Alice' },
+            { id: '2', name: 'Bob' },
+            { id: '3', name: 'Charlie' },
+            { id: '4', name: 'David' },
+            { id: '5', name: 'Eve' }
+        ];
+
+        // Function to display users
+        function displayUsers(userList) {
+            const listElement = document.getElementById('userList');
+            listElement.innerHTML = ''; // Clear previous list
+            userList.forEach(user => {
+                const listItem = document.createElement('li');
+                listItem.className = 'user-item';
+                listItem.innerHTML = `${user.name} (ID: ${user.id})`;
+                listElement.appendChild(listItem);
+            });
+        }
+
+        // Initial display of users
+        displayUsers(users);
+
+        // Search functionality
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filteredUsers = users.filter(user => user.name.toLowerCase().includes(query));
+            displayUsers(filteredUsers);
+        });
+
+        // Delete user functionality
+        document.getElementById('deleteButton').addEventListener('click', function() {
+            const userId = document.getElementById('deleteUserId').value;
+            const reason = document.getElementById('deleteReason').value;
+            const userIndex = users.findIndex(user => user.id === userId);
+
+            if (userIndex !== -1) {
+                // Delete user
+                const deletedUser = users.splice(userIndex, 1);
+                document.getElementById('feedback').textContent = `User ${deletedUser[0].name} deleted. Reason: ${reason}`;
+                displayUsers(users); // Refresh user list
+            } else {
+                document.getElementById('feedback').textContent = 'User not found.';
+            }
+
+            // Clear input fields
+            document.getElementById('deleteUserId').value = '';
+            document.getElementById('deleteReason').value = '';
+        });
+    </script>
+</body>
+</html>
