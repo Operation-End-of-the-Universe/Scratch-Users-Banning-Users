@@ -28,5 +28,5 @@ BE WARNED: WE DO NOT CONDORSE ILLEGAL ACTIVITY (Banning scratch accounts aren't 
 - Lord Andreana (OEOU Leader)
 - Zophia Ventura The Czech 'Z' (Chief Z)
 - Rukavov (Ch'en) @gol.d.starfall on discord (Chief R)
-- Starfall Zecondrovix (@StarfallZC on Scratch)
+- Starfall Zecondrovix (Formerly @StarfallZC now is @AkkaneeCW on Scratch)
 - Other members of OEOU
